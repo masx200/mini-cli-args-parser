@@ -1,7 +1,8 @@
 {
+    "types": "lib/index.d.ts",
     "type": "module",
     "name": "@masx200/mini-cli-args-parser",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "lib/index.js",
     "repository": {
         "type": "git",
@@ -15,7 +16,7 @@
     },
     "homepage": "https://github.com/masx200/mini-cli-args-parser#readme",
     "scripts": {
-        "format": "npx prettier --write */*.js *.md *.json",
+        "format": "npx prettier --write */*.js *.md *.json  */*.ts ",
         "test": "node test/test.js"
     },
     "keywords": [],
