@@ -1,23 +1,29 @@
-{ "type":"module",
-  "name": "@masx200/mini-cli-args-parser",
-  "version": "1.0.0",
-  "main": "lib/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/masx200/mini-cli-args-parser.git"
-  },
-  "author": "masx200 <masx200@qq.com>",
-  "license": "MIT",
-  "description": "迷你版命令行参数解析器",
-  "bugs": {
-    "url": "https://github.com/masx200/mini-cli-args-parser/issues"
-  },
-  "homepage": "https://github.com/masx200/mini-cli-args-parser#readme",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": []
+{
+    "type": "module",
+    "name": "@masx200/mini-cli-args-parser",
+    "version": "1.0.0",
+    "main": "lib/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/masx200/mini-cli-args-parser.git"
+    },
+    "author": "masx200 <masx200@qq.com>",
+    "license": "MIT",
+    "description": "迷你版命令行参数解析器",
+    "bugs": {
+        "url": "https://github.com/masx200/mini-cli-args-parser/issues"
+    },
+    "homepage": "https://github.com/masx200/mini-cli-args-parser#readme",
+    "scripts": {
+        "format": "npx prettier --write */*.js *.md *.json",
+        "test": "node test/test.js"
+    },
+    "keywords": [],
+    "devDependencies": {
+        "prettier": "^2.1.2"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.com"
+    }
 }
