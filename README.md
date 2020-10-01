@@ -20,3 +20,9 @@ console.log(opts);
 console.log(arr);
 
 ```
+
+# 类型声明
+
+```ts
+function parse(args: string[]): any;
+```
