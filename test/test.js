@@ -14,9 +14,9 @@ const arr = Array.from(opts);
 
 console.log(opts);
 console.log(arr);
-assert(opts?.["cccccc"] === "555555555");
+assert(opts["cccccc"] === "555555555");
 
-assert(opts?.["ddddd"] === "xcvsaz");
+assert(opts["ddddd"] === "xcvsaz");
 
 assert(arr.length === 3);
 
