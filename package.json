@@ -1,5 +1,5 @@
-{"type":"module",
-  "name": "mini-cli-args-parser",
+{ "type":"module",
+  "name": "@masx200/mini-cli-args-parser",
   "version": "1.0.0",
   "main": "lib/index.js",
   "repository": {
