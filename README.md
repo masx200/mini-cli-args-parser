@@ -41,3 +41,9 @@ const opts = parse(args);
 
 const arr = Array.from(opts);
 ```
+
+# 查看例子
+
+
+
+https://github.com/masx200/mini-cli-args-parser/blob/master/test/test.js
