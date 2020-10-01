@@ -8,10 +8,10 @@
 yarn add @masx200/mini-cli-args-parser"
 ```
 
-# 使用
+# 使用方法
 
 ```js
-import parse from "@masx200/mini-cli-args-parser"";
+import parse from "@masx200/mini-cli-args-parser";
 const args=process.argv.slice(2)
 const opts = parse(args);
 const arr = Array.from(opts);
