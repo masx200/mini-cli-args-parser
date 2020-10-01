@@ -5,7 +5,7 @@
 # 安装
 
 ```shell
-yarn add @masx200/mini-cli-args-parser"
+yarn add "@masx200/mini-cli-args-parser"
 ```
 
 # 使用方法
