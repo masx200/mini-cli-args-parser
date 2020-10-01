@@ -26,3 +26,18 @@ console.log(arr);
 ```ts
 function parse(args: string[]): any;
 ```
+
+## 获取命名参数
+
+```js
+const opts = parse(args);
+```
+
+## 获取其他参数
+
+
+
+```js
+
+const arr = Array.from(opts);
+```
