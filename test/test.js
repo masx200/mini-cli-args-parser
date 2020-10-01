@@ -7,6 +7,7 @@ const args = [
     "--cccccc=555555555",
     "--ddddd=xcvsaz",
     "xxxxxxxxxxxxx",
+    "--ttt=bbb=1"
 ];
 
 const opts = parse(args);
@@ -23,3 +24,4 @@ assert(arr.length === 3);
 assert(arr[0] === "aaaaaaa");
 assert(arr[1] === "bbbbbb");
 assert(arr[2] === "xxxxxxxxxxxxx");
+assert(opts["ttt"] === "bbb=1");
