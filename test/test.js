@@ -7,7 +7,7 @@ const args = [
     "--cccccc=555555555",
     "--ddddd=xcvsaz",
     "xxxxxxxxxxxxx",
-    "--ttt=bbb=1"
+    "--ttt=bbb=1",
 ];
 
 const opts = parse(args);
