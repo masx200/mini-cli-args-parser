@@ -40,4 +40,30 @@ const arr = Array.from(opts);
 
 # 查看例子
 
-https://github.com/masx200/mini-cli-args-parser/blob/master/test/test.js
+```js
+const args = [
+    "aaaaaaa",
+    "bbbbbb",
+    "--cccccc=555555555",
+    "--ddddd=xcvsaz",
+    "xxxxxxxxxxxxx",
+    "--ttt=bbb=1",
+];
+
+const opts = parse(args);
+const arr = Array.from(opts);
+
+console.log(opts);
+console.log(arr);
+```
+```
+
+[Object: null prototype] {
+  cccccc: '555555555',
+  ddddd: 'xcvsaz',
+  ttt: 'bbb=1',
+  [Symbol(Symbol.iterator)]: [Function: bound values]
+}
+[ 'aaaaaaa', 'bbbbbb', 'xxxxxxxxxxxxx' ]
+
+```
