@@ -9,7 +9,7 @@ const args = [
     "xxxxxxxxxxxxx",
     "--ttt=bbb=1",
 ];
-
+console.log(args);
 const opts = parse(args);
 const arr = Array.from(opts);
 
