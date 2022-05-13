@@ -56,6 +56,7 @@ const arr = Array.from(opts);
 console.log(opts);
 console.log(arr);
 ```
+
 ```
 
 [Object: null prototype] {
