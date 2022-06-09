@@ -15,18 +15,17 @@ const manglecompressplugin = terser({
     },
 });
 export default [
-    
     {
         external: [],
         input: "./lib/index.js",
         output: [
             {
-                
                 file: "./dist/index.cjs",
                 format: "commonjs",
                 sourcemap: true,
-            },{
-                
+                exports: "auto",
+            },
+            {
                 file: "./dist/index.mjs",
                 format: "esm",
                 sourcemap: true,
@@ -37,7 +36,17 @@ export default [
             commonjs(),
             json(),
             babel({
-                presets: ["@babel/preset-env"],
+                presets: [
+                    [
+                        "@babel/preset-env",
+                        {
+                            targets: {
+                                esmodules: true,
+                                node: "16",
+                            },
+                        },
+                    ],
+                ],
             }),
 
             manglecompressplugin,

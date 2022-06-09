@@ -72,15 +72,21 @@ function n(t, e) {
             configurable: !0,
         },
     })),
+        Object.defineProperty(t, "prototype", {
+            writable: !1,
+        }),
         e && o(t, e);
 }
 
 function o(t, e) {
-    return (o =
-        Object.setPrototypeOf ||
-        function (t, e) {
-            return (t.__proto__ = e), t;
-        })(t, e);
+    return (
+        (o = Object.setPrototypeOf
+            ? Object.setPrototypeOf.bind()
+            : function (t, e) {
+                  return (t.__proto__ = e), t;
+              }),
+        o(t, e)
+    );
 }
 
 module.exports = function (t) {
@@ -89,16 +95,14 @@ module.exports = function (t) {
             var e = Object.create(null);
             return (
                 t
-                    .filter(function (t) {
-                        return t.startsWith("--");
-                    })
-                    .map(function (t) {
-                        return r(/\x2D\x2D(.+?)=(.+)/g, {
+                    .filter((t) => t.startsWith("--"))
+                    .map((t) =>
+                        r(/\x2D\x2D(.+?)=(.+)/g, {
                             key: 1,
                             value: 2,
-                        }).exec(t);
-                    })
-                    .forEach(function (t) {
+                        }).exec(t)
+                    )
+                    .forEach((t) => {
                         var r = null == t ? void 0 : t.groups,
                             n = null == r ? void 0 : r.key,
                             o = null == r ? void 0 : r.value;
@@ -107,9 +111,7 @@ module.exports = function (t) {
                 e
             );
         })(t),
-        o = t.filter(function (t) {
-            return "string" == typeof t && !t.startsWith("-");
-        });
+        o = t.filter((t) => "string" == typeof t && !t.startsWith("-"));
     return (n[Symbol.iterator] = o[Symbol.iterator].bind(o)), n;
 };
 //# sourceMappingURL=index.cjs.map

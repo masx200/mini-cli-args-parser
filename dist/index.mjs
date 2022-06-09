@@ -2,27 +2,27 @@ import t from "assert";
 
 function e() {
     e = function (t, e) {
-        return new u(t, void 0, e);
+        return new i(t, void 0, e);
     };
     var t = RegExp.prototype,
         o = new WeakMap();
-    function u(t, e, r) {
-        var i = new RegExp(t, e);
-        return o.set(i, r || o.get(t)), n(i, u.prototype);
+    function i(t, e, r) {
+        var u = new RegExp(t, e);
+        return o.set(u, r || o.get(t)), n(u, i.prototype);
     }
-    function i(t, e) {
+    function u(t, e) {
         var r = o.get(e);
         return Object.keys(r).reduce(function (e, n) {
             return (e[n] = t[r[n]]), e;
         }, Object.create(null));
     }
     return (
-        r(u, RegExp),
-        (u.prototype.exec = function (e) {
+        r(i, RegExp),
+        (i.prototype.exec = function (e) {
             var r = t.exec.call(this, e);
-            return r && (r.groups = i(r, this)), r;
+            return r && (r.groups = u(r, this)), r;
         }),
-        (u.prototype[Symbol.replace] = function (e, r) {
+        (i.prototype[Symbol.replace] = function (e, r) {
             if ("string" == typeof r) {
                 var n = o.get(this);
                 return t[Symbol.replace].call(
@@ -34,12 +34,12 @@ function e() {
                 );
             }
             if ("function" == typeof r) {
-                var u = this;
+                var i = this;
                 return t[Symbol.replace].call(this, e, function () {
                     var t = arguments;
                     return (
                         "object" != typeof t[t.length - 1] &&
-                            (t = [].slice.call(t)).push(i(t, u)),
+                            (t = [].slice.call(t)).push(u(t, i)),
                         r.apply(this, t)
                     );
                 });
@@ -62,15 +62,21 @@ function r(t, e) {
             configurable: !0,
         },
     })),
+        Object.defineProperty(t, "prototype", {
+            writable: !1,
+        }),
         e && n(t, e);
 }
 
 function n(t, e) {
-    return (n =
-        Object.setPrototypeOf ||
-        function (t, e) {
-            return (t.__proto__ = e), t;
-        })(t, e);
+    return (
+        (n = Object.setPrototypeOf
+            ? Object.setPrototypeOf.bind()
+            : function (t, e) {
+                  return (t.__proto__ = e), t;
+              }),
+        n(t, e)
+    );
 }
 
 function o(r) {
@@ -79,16 +85,14 @@ function o(r) {
             var r = Object.create(null);
             return (
                 t
-                    .filter(function (t) {
-                        return t.startsWith("--");
-                    })
-                    .map(function (t) {
-                        return e(/\x2D\x2D(.+?)=(.+)/g, {
+                    .filter((t) => t.startsWith("--"))
+                    .map((t) =>
+                        e(/\x2D\x2D(.+?)=(.+)/g, {
                             key: 1,
                             value: 2,
-                        }).exec(t);
-                    })
-                    .forEach(function (t) {
+                        }).exec(t)
+                    )
+                    .forEach((t) => {
                         var e = null == t ? void 0 : t.groups,
                             n = null == e ? void 0 : e.key,
                             o = null == e ? void 0 : e.value;
@@ -97,11 +101,9 @@ function o(r) {
                 r
             );
         })(r),
-        o = r.filter(function (t) {
-            return "string" == typeof t && !t.startsWith("-");
-        });
+        o = r.filter((t) => "string" == typeof t && !t.startsWith("-"));
     return (n[Symbol.iterator] = o[Symbol.iterator].bind(o)), n;
 }
 
-export default o;
+export { o as default };
 //# sourceMappingURL=index.mjs.map
