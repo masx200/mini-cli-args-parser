@@ -39,5 +39,8 @@
         "access": "public",
         "registry": "https://registry.npmjs.com"
     },
-    "dependencies": {}
+    "dependencies": {},
+    "resolutions": {
+        "terser": "5.15.0"
+    }
 }
