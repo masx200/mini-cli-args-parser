@@ -19,7 +19,7 @@
     "scripts": {
         "build": "rollup -c rollup.config.js",
         "format": "npx prettier --write */*.mjs */*.cjs */*.js *.md *.json  */*.ts *.js",
-        "test": "node test/test.js"
+        "test": "node --test test/test.js"
     },
     "keywords": [],
     "devDependencies": {
