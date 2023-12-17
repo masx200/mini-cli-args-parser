@@ -2,6 +2,12 @@
 
 迷你版命令行参数解析器
 
+Take a set of command line arguments, optionally with a set of options, and return an object representing the flags found in the passed arguments.
+
+By default, any arguments starting with `-` or `--` are considered boolean flags. If the argument name is followed by an equal sign (`=`) it is considered a key-value pair. Any arguments which could not be parsed are available in `Array.from(parsedArgs)`.
+
+Any arguments after '`--`' will not be parsed and will end up in `Array.from(parsedArgs)`.
+
 # 安装
 
 ```shell
@@ -67,4 +73,31 @@ console.log(arr);
 }
 [ 'aaaaaaa', 'bbbbbb', 'xxxxxxxxxxxxx' ]
 
+```
+
+```ts
+const res = parse([
+    "-a",
+    "-he",
+    "--dddd",
+    "--eeeeee=3333",
+    "--",
+    "haha",
+    "--",
+    "-o",
+    "--p",
+]);
+const arr = [...res];
+console.log(res, arr);
+```
+
+```
+[Object: null prototype] {
+  eeeeee: '3333',
+  a: true,
+  h: true,
+  e: true,
+  dddd: true,
+  [Symbol(Symbol.iterator)]: [Function (anonymous)]
+} [ 'haha', '--', '-o', '--p' ]
 ```

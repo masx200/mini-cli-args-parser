@@ -1,8 +1,11 @@
 import { babel } from "@rollup/plugin-babel";
-import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import { terser } from "rollup-plugin-terser";
 import json from "@rollup/plugin-json";
+import resolve from "@rollup/plugin-node-resolve";
+import { defineConfig } from "rollup";
+import { terser } from "rollup-plugin-terser";
+import ts from "rollup-plugin-ts";
+
 const manglecompressplugin = terser({
     toplevel: true,
     //   sourcemap: true,
@@ -14,10 +17,10 @@ const manglecompressplugin = terser({
         beautify: true,
     },
 });
-export default [
+export default defineConfig([
     {
         external: [],
-        input: "./lib/index.js",
+        input: "./src/index.ts",
         output: [
             {
                 file: "./dist/index.cjs",
@@ -32,10 +35,12 @@ export default [
             },
         ],
         plugins: [
+            ts({ transpiler: "swc" }),
             resolve(),
             commonjs(),
             json(),
             babel({
+                babelHelpers: "bundled",
                 presets: [
                     [
                         "@babel/preset-env",
@@ -52,4 +57,4 @@ export default [
             manglecompressplugin,
         ],
     },
-];
+]);

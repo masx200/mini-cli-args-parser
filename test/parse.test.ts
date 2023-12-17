@@ -1,6 +1,6 @@
 import assert from "assert";
-import parse from "../lib/index.js";
-import test from "node:test";
+import parse from "../src/index.ts";
+import { test } from "vitest";
 test("mini-cli-args-parser", () => {
     const args = [
         "aaaaaaa",
@@ -10,12 +10,12 @@ test("mini-cli-args-parser", () => {
         "xxxxxxxxxxxxx",
         "--ttt=bbb=1",
     ];
-    console.log(args);
+    // console.log(args);
     const opts = parse(args);
     const arr = Array.from(opts);
 
-    console.log(opts);
-    console.log(arr);
+    // console.log(opts);
+    // console.log(arr);
     assert(opts["cccccc"] === "555555555");
 
     assert(opts["ddddd"] === "xcvsaz");
@@ -26,4 +26,15 @@ test("mini-cli-args-parser", () => {
     assert(arr[1] === "bbbbbb");
     assert(arr[2] === "xxxxxxxxxxxxx");
     assert(opts["ttt"] === "bbb=1");
+    assert.deepEqual(arr, ["aaaaaaa", "bbbbbb", "xxxxxxxxxxxxx"]);
+    assert.deepEqual(
+        new Map(Object.entries(opts)),
+        new Map(
+            Object.entries({
+                cccccc: "555555555",
+                ddddd: "xcvsaz",
+                ttt: "bbb=1",
+            })
+        )
+    );
 });
