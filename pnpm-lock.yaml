@@ -36,8 +36,8 @@ devDependencies:
     specifier: ^18.7.11
     version: 18.19.3
   prettier:
-    specifier: ^2.1.2
-    version: 2.8.8
+    specifier: ^3.0.0
+    version: 3.2.5
   rollup:
     specifier: ^2.75.6
     version: 2.79.1
@@ -46,10 +46,10 @@ devDependencies:
     version: 7.0.2(rollup@2.79.1)
   rollup-plugin-ts:
     specifier: ^3.4.5
-    version: 3.4.5(@babel/core@7.23.6)(@babel/preset-env@7.23.6)(@swc/core@1.3.100)(@swc/helpers@0.5.3)(rollup@2.79.1)(typescript@5.3.3)
+    version: 3.4.5(@babel/core@7.23.6)(@babel/preset-env@7.23.6)(@swc/core@1.3.100)(@swc/helpers@0.5.3)(rollup@2.79.1)(typescript@5.4.3)
   typescript:
     specifier: ^5.3.3
-    version: 5.3.3
+    version: 5.4.3
   vitest:
     specifier: ^1.0.4
     version: 1.0.4(@types/node@18.19.3)
@@ -2029,14 +2029,14 @@ packages:
     resolution: {integrity: sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==}
     dev: true
 
-  /compatfactory@3.0.0(typescript@5.3.3):
+  /compatfactory@3.0.0(typescript@5.4.3):
     resolution: {integrity: sha512-WD5kF7koPwVoyKL8p0LlrmIZtilrD46sQStyzzxzTFinMKN2Dxk1hN+sddLSQU1mGIZvQfU8c+ONSghvvM40jg==}
     engines: {node: '>=14.9.0'}
     peerDependencies:
       typescript: '>=3.x || >= 4.x || >= 5.x'
     dependencies:
       helpertypes: 0.0.19
-      typescript: 5.3.3
+      typescript: 5.4.3
     dev: true
 
   /convert-source-map@2.0.0:
@@ -2481,9 +2481,9 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /prettier@2.8.8:
-    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
-    engines: {node: '>=10.13.0'}
+  /prettier@3.2.5:
+    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
@@ -2568,7 +2568,7 @@ packages:
       terser: 5.15.0
     dev: true
 
-  /rollup-plugin-ts@3.4.5(@babel/core@7.23.6)(@babel/preset-env@7.23.6)(@swc/core@1.3.100)(@swc/helpers@0.5.3)(rollup@2.79.1)(typescript@5.3.3):
+  /rollup-plugin-ts@3.4.5(@babel/core@7.23.6)(@babel/preset-env@7.23.6)(@swc/core@1.3.100)(@swc/helpers@0.5.3)(rollup@2.79.1)(typescript@5.4.3):
     resolution: {integrity: sha512-9iCstRJpEZXSRQuXitlSZAzcGlrqTbJg1pE4CMbEi6xYldxVncdPyzA2I+j6vnh73wBymZckerS+Q/iEE/M3Ow==}
     engines: {node: '>=16.15.1', npm: '>=7.0.0', pnpm: '>=3.2.0', yarn: '>=1.13'}
     peerDependencies:
@@ -2606,13 +2606,13 @@ packages:
       ansi-colors: 4.1.3
       browserslist: 4.22.2
       browserslist-generator: 2.1.0
-      compatfactory: 3.0.0(typescript@5.3.3)
+      compatfactory: 3.0.0(typescript@5.4.3)
       crosspath: 2.0.0
       magic-string: 0.30.5
       rollup: 2.79.1
-      ts-clone-node: 3.0.0(typescript@5.3.3)
+      ts-clone-node: 3.0.0(typescript@5.4.3)
       tslib: 2.6.2
-      typescript: 5.3.3
+      typescript: 5.4.3
     dev: true
 
   /rollup@2.79.1:
@@ -2773,14 +2773,14 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /ts-clone-node@3.0.0(typescript@5.3.3):
+  /ts-clone-node@3.0.0(typescript@5.4.3):
     resolution: {integrity: sha512-egavvyHbIoelkgh1IC2agNB1uMNjB8VJgh0g/cn0bg2XXTcrtjrGMzEk4OD3Fi2hocICjP3vMa56nkzIzq0FRg==}
     engines: {node: '>=14.9.0'}
     peerDependencies:
       typescript: ^3.x || ^4.x || ^5.x
     dependencies:
-      compatfactory: 3.0.0(typescript@5.3.3)
-      typescript: 5.3.3
+      compatfactory: 3.0.0(typescript@5.4.3)
+      typescript: 5.4.3
     dev: true
 
   /tslib@2.6.2:
@@ -2792,8 +2792,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /typescript@5.3.3:
-    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
+  /typescript@5.4.3:
+    resolution: {integrity: sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg==}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
